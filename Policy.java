@@ -72,6 +72,7 @@ public class Policy {
         return weight;
     }
 
+<<<<<<< Updated upstream
     /**
      * Calculates the price of the policy based on certain criteria.
      * @return Policy price.
@@ -81,3 +82,61 @@ public class Policy {
         return 0.0; // Placeholder, actual implementation needed
     }
 }
+=======
+   public int getPolicyholderAge() {
+       return policyholderAge;
+   }
+
+   public void setPolicyholderAge(int policyholderAge) {
+       this.policyholderAge = policyholderAge;
+   }
+
+   public String getPolicyholderSmokingStatus() {
+       return policyholderSmokingStatus;
+   }
+
+   public void setPolicyholderSmokingStatus(String policyholderSmokingStatus) {
+       this.policyholderSmokingStatus = policyholderSmokingStatus;
+   }
+
+   public double getPolicyholderHeight() {
+       return policyholderHeight;
+   }
+
+   public void setPolicyholderHeight(double policyholderHeight) {
+       this.policyholderHeight = policyholderHeight;
+   }
+
+   public double getPolicyholderWeight() {
+       return policyholderWeight;
+   }
+
+   public void setPolicyholderWeight(double policyholderWeight) {
+       this.policyholderWeight = policyholderWeight;
+   }
+
+   public double calculateBMI() {
+       return (policyholderWeight * 703) / (policyholderHeight * policyholderHeight);
+   }
+
+   public double calculatePolicyPrice() {
+       double additionalFee = 0.0;
+
+       if (policyholderAge > 50) {
+           additionalFee += 75.0;
+       }
+
+       if (policyholderSmokingStatus.equals("smoker")) {
+           additionalFee += 100.0;
+       }
+
+       double bmi = calculateBMI();
+
+       if (bmi > 35) {
+           additionalFee += (bmi - 35) * 20;
+       }
+
+       return additionalFee + 600.0;
+   }
+}
+>>>>>>> Stashed changes
